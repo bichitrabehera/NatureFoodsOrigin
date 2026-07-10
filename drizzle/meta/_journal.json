@@ -1,0 +1,34 @@
+{
+  "version": "7",
+  "dialect": "postgresql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "7",
+      "when": 1783665024669,
+      "tag": "0000_nifty_falcon",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1783674321899,
+      "tag": "0001_peaceful_the_initiative",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1783676233958,
+      "tag": "0002_silent_black_tarantula",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1783677331412,
+      "tag": "0003_unknown_power_pack",
+      "breakpoints": true
+    }
+  ]
+}

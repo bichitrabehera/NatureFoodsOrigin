@@ -1,0 +1,31 @@
+{
+  "name": "nature-food-origin",
+  "version": "0.1.0",
+  "private": true,
+  "packageManager": "pnpm@10.10.0",
+  "scripts": {
+    "dev": "turbo dev",
+    "build": "turbo build",
+    "dev:customer": "pnpm --filter customer dev",
+    "build:customer": "pnpm --filter customer build",
+    "dev:admin": "pnpm --filter admin dev",
+    "build:admin": "pnpm --filter admin build",
+    "lint": "eslint",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "drizzle-kit migrate",
+    "db:seed": "pnpm exec tsx packages/shared/src/db/seed.ts"
+  },
+  "dependencies": {
+    "dotenv": "^17.4.2"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "drizzle-kit": "^0.31.10",
+    "eslint": "^9",
+    "prettier": "^3.9.4",
+    "prettier-plugin-tailwindcss": "^0.8.0",
+    "turbo": "^2.5.0",
+    "typescript": "^5",
+    "tsx": "^4.19.0"
+  }
+}
