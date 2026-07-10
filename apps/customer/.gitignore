@@ -5,7 +5,6 @@
 .hive/
 .claude/
 .opencode/
-data/
 dist/
 node_modules/
 target/
@@ -32,7 +31,6 @@ artifacts
 .DS_Store
 .env*
 vendor/
-data
 *.log
 todos.md
 .store
