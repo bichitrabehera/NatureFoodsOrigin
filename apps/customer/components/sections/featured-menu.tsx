@@ -1,7 +1,7 @@
 import React from "react";
 import { SectionHeading } from "@/components/sections/section-heading";
 import { ProductCard } from "@/components/shared/product-card";
-import { products } from "@/lib/data/products";
+import { products } from "@/lib/webdata/products";
 
 export function FeaturedMenu() {
   return (

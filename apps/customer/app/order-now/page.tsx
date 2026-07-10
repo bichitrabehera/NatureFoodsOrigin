@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { ShoppingCart, Check } from "lucide-react";
-import { products, categories } from "@/lib/data/products";
+import { products, categories } from "@/lib/webdata/products";
 import { useCart } from "@/lib/context/cart-context";
 import { Button } from "@/components/ui/button";
 import { SectionHeading } from "@/components/sections/section-heading";

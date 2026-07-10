@@ -4,7 +4,7 @@ import React, { useRef } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { SectionHeading } from "@/components/sections/section-heading";
 import { TestimonialCard } from "@/components/shared/testimonial-card";
-import { testimonials } from "@/lib/data/testimonials";
+import { testimonials } from "@/lib/webdata/testimonials";
 
 export function Testimonials() {
   const scrollRef = useRef<HTMLDivElement>(null);

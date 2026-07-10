@@ -1,7 +1,7 @@
 import React from "react";
 import { SectionHeading } from "@/components/sections/section-heading";
 import { FeatureCard } from "@/components/shared/feature-card";
-import { features } from "@/lib/data/features";
+import { features } from "@/lib/webdata/features";
 
 export function WhyChooseUs() {
   return (
