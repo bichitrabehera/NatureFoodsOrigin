@@ -52,7 +52,7 @@ export default function Page() {
             ))}
           </div>
 
-          <div className="overflow-hidden rounded-[32px] border-2 border-[#0D530E] bg-white ">
+          <div className="overflow-hidden rounded-xl border-2 border-neutral-200 bg-white ">
             <iframe
               title="Nature Foods Location"
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d289.00089328267063!2d77.71510989088421!3d12.951553273651939!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae13005deabdef%3A0xbdd17193fd9c1f1a!2sAsha%20Tiffins!5e0!3m2!1sen!2sin!4v1783629781997!5m2!1sen!2sin"

@@ -21,8 +21,8 @@ export function Testimonials() {
   };
 
   return (
-    <section className="py-24 md:py-32 bg-white">
-      <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
+    <section className="bg-white py-12 md:py-24">
+      <div className="mx-auto max-w-7xl px-4 sm:px-8 lg:px-10">
         <div className="mb-12 flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-center">
           <SectionHeading
             title="What Our Customers Say"

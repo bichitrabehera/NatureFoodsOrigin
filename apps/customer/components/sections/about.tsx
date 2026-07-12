@@ -5,7 +5,7 @@ import { SectionHeading } from "@/components/sections/section-heading";
 export function About() {
   return (
     <div className="mx-auto space-y-8 bg-white *:px-6 sm:px-8 lg:px-10">
-      <div className="mx-auto max-w-7xl space-y-8 py-24 md:py-32">
+      <div className="mx-auto max-w-7xl space-y-8 py-12 md:py-24">
         <h3 className="text-4xl font-extrabold text-[#0D530E] lg:text-6xl">
           Every Great <span className="text-primary underline">Meal</span>{" "}
           Begins With a Story.
@@ -29,7 +29,7 @@ export function About() {
           inspired our very first customer.
         </p>
 
-        <div className="border-primary/30 bg-primary/20 rounded-2xl border p-6 ">
+        <div className="border-primary/30 bg-primary/20 rounded-2xl border p-6">
           <h4 className="text-primary mb-4 text-3xl font-bold">Our Mission</h4>
 
           <p className="text-primary/80 text-2xl leading-relaxed">

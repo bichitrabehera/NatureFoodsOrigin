@@ -78,14 +78,11 @@ export function Navbar() {
               </Button>
             </div>
 
-            <div className="flex items-center gap-3 md:hidden">
-              <Link
-                href="/your-cart"
-                className="relative text-[#E7E1B1]"
-              >
+            <div className="flex items-center justify-center gap-6 md:hidden">
+              <Link href="/your-cart" className="relative text-white">
                 <ShoppingCart className="h-6 w-6" />
                 {itemCount > 0 && (
-                  <span className="absolute -top-2 -right-2 flex h-5 w-5 items-center justify-center rounded-full bg-[#E7E1B1] text-xs font-bold text-[#0D530E]">
+                  <span className="absolute -top-2 -right-2 flex h-5 w-5 items-center justify-center rounded-full bg-white text-xs font-bold text-[#0D530E]">
                     {itemCount}
                   </span>
                 )}
@@ -113,7 +110,7 @@ export function Navbar() {
           <div className="fixed inset-0 z-[60] bg-[#306D29] md:hidden">
             <div className="flex h-full flex-col">
               <div className="flex items-center justify-between px-6 py-8">
-                <span className="text-[#E7E1B1] text-3xl font-bold">
+                <span className="text-3xl font-bold text-[#E7E1B1]">
                   <Link href="/">NFO</Link>
                 </span>
 
@@ -125,13 +122,6 @@ export function Navbar() {
               </div>
 
               <div className="flex flex-1 flex-col items-center justify-center gap-8">
-                <Link
-                  href="/order-now"
-                  onClick={() => setMobileOpen(false)}
-                  className="text-4xl font-bold text-white uppercase"
-                >
-                  Order Now
-                </Link>
                 {navLinks.map((link) => (
                   <Link
                     key={link.label}
@@ -148,6 +138,13 @@ export function Navbar() {
                   className="text-4xl font-bold text-white uppercase"
                 >
                   Cart {itemCount > 0 ? `(${itemCount})` : ""}
+                </Link>
+                <Link
+                  href="/order-now"
+                  onClick={() => setMobileOpen(false)}
+                  className="text-4xl font-bold text-black uppercase bg-white/70 px-6 py-3 rounded-2xl transition-colors hover:bg-white/20"
+                >
+                  Order Now
                 </Link>
               </div>
             </div>

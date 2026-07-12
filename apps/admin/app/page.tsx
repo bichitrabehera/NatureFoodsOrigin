@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import { redirect } from "next/navigation";
 import { ShoppingBag, TrendingUp, Clock } from "lucide-react";
 import { getOrderStats } from "./actions";
 
@@ -9,14 +10,7 @@ export default async function AdminDashboardPage() {
   const stats = await getOrderStats();
 
   if ("error" in stats) {
-    return (
-      <div className="flex min-h-[60vh] items-center justify-center px-6">
-        <div className="max-w-md text-center">
-          <p className="mb-4 text-xl font-bold text-red-500">{(stats as any).error}</p>
-          <p className="text-text/70">Set up your DATABASE_URL in .env.local and run <code className="rounded bg-text/10 px-2 py-1 font-mono text-sm">npx drizzle-kit migrate</code> then <code className="rounded bg-text/10 px-2 py-1 font-mono text-sm">npx tsx packages/shared/src/db/seed.ts</code>.</p>
-        </div>
-      </div>
-    );
+    redirect("/login");
   }
 
   const statusColors: Record<string, string> = {
@@ -33,7 +27,7 @@ export default async function AdminDashboardPage() {
       <h1 className="mb-8 text-4xl font-black text-text">Dashboard</h1>
 
       <div className="mb-12 grid gap-6 sm:grid-cols-3">
-        <div className="rounded-2xl border-2 border-text bg-[#FBF5DD] p-6">
+        <div className="rounded-2xl border border-text bg-[#FBF5DD] p-6">
           <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-xl bg-primary text-white">
             <ShoppingBag className="h-6 w-6" />
           </div>
@@ -41,7 +35,7 @@ export default async function AdminDashboardPage() {
           <p className="text-4xl font-black text-primary">{stats.total}</p>
         </div>
 
-        <div className="rounded-2xl border-2 border-text bg-[#FBF5DD] p-6">
+        <div className="rounded-2xl border border-text bg-[#FBF5DD] p-6">
           <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-xl bg-primary text-white">
             <TrendingUp className="h-6 w-6" />
           </div>
@@ -51,7 +45,7 @@ export default async function AdminDashboardPage() {
 
         <Link
           href="/orders"
-          className="rounded-2xl border-2 border-text bg-[#FBF5DD] p-6 transition-all hover:bg-[#E7E1B1]"
+          className="rounded-2xl border border-text bg-[#FBF5DD] p-6 transition-all hover:bg-[#E7E1B1]"
         >
           <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-xl bg-primary text-white">
             <Clock className="h-6 w-6" />
@@ -69,7 +63,7 @@ export default async function AdminDashboardPage() {
         {Object.entries(stats.byStatus).map(([status, count]) => (
           <div
             key={status}
-            className="flex items-center justify-between rounded-xl border-2 border-text/20 bg-[#FBF5DD] px-5 py-4"
+            className="flex items-center justify-between rounded-xl border border-neutral-200 bg-[#FBF5DD] px-5 py-4"
           >
             <span
               className={`rounded-full px-3 py-1 text-sm font-bold capitalize ${

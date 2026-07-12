@@ -20,7 +20,7 @@ export default function OrderNowPage() {
     items.find((i) => i.product.id === productId)?.quantity || 0;
 
   return (
-    <section className="bg-background min-h-screen py-24 md:py-32">
+    <section className="min-h-screen bg-white py-12 md:py-24">
       <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
         <SectionHeading
           title="Order Now"
@@ -32,10 +32,10 @@ export default function OrderNowPage() {
             <button
               key={cat}
               onClick={() => setActiveCategory(cat)}
-              className={`rounded-full px-6 py-2 text-lg font-bold capitalize transition-all ${
+              className={`rounded-full px-4 py-1 text-lg font-bold capitalize transition-all ${
                 activeCategory === cat
                   ? "bg-primary text-white"
-                  : "bg-[#E7E1B1] text-[#0D530E] hover:bg-primary hover:text-white"
+                  : "hover:bg-primary bg-[#E7E1B1] text-[#0D530E] hover:text-white"
               }`}
             >
               {cat}
@@ -49,7 +49,7 @@ export default function OrderNowPage() {
             return (
               <div
                 key={product.id}
-                className="group overflow-hidden rounded-2xl border-2 border-[#0D530E] bg-[#FBF5DD] transition-all duration-300 hover:-translate-x-1 hover:-translate-y-1"
+                className="group overflow-hidden rounded-2xl border border-neutral-200 bg-[#FBF5DD] transition-all duration-300 hover:-translate-x-1 hover:-translate-y-1"
               >
                 <div className="relative aspect-[4/3] overflow-hidden">
                   <img
@@ -58,30 +58,30 @@ export default function OrderNowPage() {
                     className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
                   />
                   {qty > 0 && (
-                    <div className="absolute top-4 right-4 rounded-full bg-primary px-3 py-1 text-sm font-bold text-white">
+                    <div className="bg-primary absolute top-4 right-4 rounded-full px-3 py-1 text-sm font-bold text-white">
                       {qty} in cart
                     </div>
                   )}
                 </div>
 
-                <div className="space-y-4 p-6">
+                <div className="space-y-2 p-6">
                   <div>
                     <div className="mb-1 flex items-center justify-between">
-                      <h3 className="text-2xl font-black text-[#0D530E]">
+                      <h3 className="text-2xl font-black text-[#000000]">
                         {product.name}
                       </h3>
-                      <span className="text-xl font-bold text-primary">
+                      <span className="text-xl font-bold text-[#000000]">
                         Rs {product.price}
                       </span>
                     </div>
-                    <p className="mt-2 text-base leading-relaxed text-[#0D530E]/70">
+                    <p className="mt-2 text-xl leading-relaxed text-[#000000]/70">
                       {product.description}
                     </p>
                   </div>
 
                   <button
                     onClick={() => addItem(product)}
-                    className="flex w-full items-center justify-center gap-2 rounded-xl border-2 border-[#0D530E] bg-primary px-4 py-3 text-lg font-bold text-white shadow-[3px_3px_0px_#0D530E] transition-all hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-none"
+                    className="bg-primary flex w-full items-center justify-center gap-2 rounded-xl border-2 border-[#0D530E] px-4 py-3 text-lg font-bold text-white shadow-[3px_3px_0px_#0D530E] transition-all hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-none"
                   >
                     <ShoppingCart className="h-5 w-5" />
                     {qty > 0 ? "Add Another" : "Add to Cart"}

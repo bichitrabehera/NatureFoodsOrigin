@@ -39,5 +39,5 @@ body::before {
 }
 
 ::-webkit-scrollbar {
-  width: 8px;
+  display: none;
 }

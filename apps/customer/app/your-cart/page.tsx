@@ -84,7 +84,7 @@ export default function CartPage() {
 
   if (items.length === 0) {
     return (
-      <section className="bg-background min-h-screen py-12 md:py-24">
+      <section className="min-h-[80vh] bg-white py-12 md:py-24">
         <div className="mx-auto max-w-3xl px-6 text-center sm:px-8 lg:px-10">
           <ShoppingBag className="mx-auto mb-6 h-20 w-20 text-[#0D530E]/30" />
           <h2 className="mb-4 text-4xl font-black text-[#0D530E]">
@@ -106,9 +106,9 @@ export default function CartPage() {
   }
 
   return (
-    <section className="bg-background min-h-screen py-8 md:py-12">
+    <section className="min-h-screen bg-white py-12 md:py-24">
       {" "}
-      <div className="mx-auto max-w-6xl px-6 sm:px-8 lg:px-10">
+      <div className="mx-auto max-w-6xl px-6">
         <SectionHeading title="Your Cart" />
 
         <div className="grid gap-8 lg:grid-cols-2">
@@ -117,7 +117,7 @@ export default function CartPage() {
             {items.map((item) => (
               <div
                 key={item.product.id}
-                className="rounded-2xl border-2 border-[#0D530E] bg-[#FBF5DD] p-4"
+                className="rounded-2xl border border-neutral-200 bg-[#FBF5DD] p-4"
               >
                 <div className="flex gap-4">
                   <img
@@ -148,7 +148,7 @@ export default function CartPage() {
                       onClick={() =>
                         updateQuantity(item.product.id, item.quantity - 1)
                       }
-                      className="flex h-9 w-9 items-center justify-center rounded-full border-2 border-[#0D530E] text-[#0D530E] transition hover:bg-[#0D530E] hover:text-white"
+                      className="flex h-9 w-9 items-center justify-center rounded-full border border-neutral-600 text-[#0D530E] transition hover:bg-[#0D530E] hover:text-white"
                     >
                       <Minus className="h-4 w-4" />
                     </button>
@@ -161,7 +161,7 @@ export default function CartPage() {
                       onClick={() =>
                         updateQuantity(item.product.id, item.quantity + 1)
                       }
-                      className="flex h-9 w-9 items-center justify-center rounded-full border-2 border-[#0D530E] text-[#0D530E] transition hover:bg-[#0D530E] hover:text-white"
+                      className="flex h-9 w-9 items-center justify-center rounded-full border border-neutral-600 text-[#0D530E] transition hover:bg-[#0D530E] hover:text-white"
                     >
                       <Plus className="h-4 w-4" />
                     </button>
@@ -169,7 +169,7 @@ export default function CartPage() {
 
                   <button
                     onClick={() => removeItem(item.product.id)}
-                    className="flex h-10 w-10 items-center justify-center rounded-xl border-2 border-red-500 text-red-500 transition hover:bg-red-500 hover:text-white"
+                    className="flex h-10 w-10 items-center justify-center rounded-xl border border-red-100 bg-red-400 text-white transition hover:bg-red-500 hover:text-white"
                   >
                     <Trash2 className="h-5 w-5" />
                   </button>
@@ -177,7 +177,7 @@ export default function CartPage() {
               </div>
             ))}
           </div>
-          <div className="rounded-2xl border-2 border-[#0D530E] bg-[#FBF5DD] p-6">
+          <div className="rounded-2xl border border-neutral-200 bg-[#FBF5DD] p-4">
             <h3 className="mb-6 text-2xl font-black text-[#0D530E]">
               Order Summary
             </h3>
@@ -198,7 +198,7 @@ export default function CartPage() {
               ))}
             </div>
 
-            <div className="mb-8 space-y-2 border-t-2 border-[#0D530E]/20 pt-4">
+            <div className="mb-8 space-y-2 border-t-2 border-[#000000]/20 pt-4">
               <div className="flex justify-between text-xl">
                 <span className="text-[#0D530E]/70">Subtotal</span>
                 <span className="font-bold text-[#0D530E]">
@@ -233,48 +233,46 @@ export default function CartPage() {
                   name="name"
                   value={form.name}
                   onChange={handleChange}
-                  className="focus:border-primary w-full rounded-xl border-2 border-[#0D530E] bg-white px-4 py-3 text-base text-[#0D530E] transition-all outline-none"
+                  className="w-full rounded-xl border border-neutral-200 bg-white px-4 py-3 text-base text-[#0D530E] transition-all outline-none focus:border-neutral-300"
                 />
               </div>
 
               {/* Phone + Email */}
-              <div className="grid gap-4 md:grid-cols-2">
-                <div className="space-y-2">
-                  <label
-                    htmlFor="phone"
-                    className="text-lg font-bold text-[#0D530E]"
-                  >
-                    Phone Number <span className="text-red-500">*</span>
-                  </label>
-                  <input
-                    id="phone"
-                    type="tel"
-                    name="phone"
-                    value={form.phone}
-                    onChange={handleChange}
-                    className="focus:border-primary w-full rounded-xl border-2 border-[#0D530E] bg-white px-4 py-3 text-base text-[#0D530E] transition-all outline-none"
-                  />
-                </div>
+              <div className="space-y-2">
+                <label
+                  htmlFor="phone"
+                  className="text-lg font-bold text-[#0D530E]"
+                >
+                  Phone Number <span className="text-red-500">*</span>
+                </label>
+                <input
+                  id="phone"
+                  type="tel"
+                  name="phone"
+                  value={form.phone}
+                  onChange={handleChange}
+                  className="w-full rounded-xl border border-neutral-200 bg-white px-4 py-3 text-base text-[#0D530E] transition-all outline-none focus:border-neutral-300"
+                />
+              </div>
 
-                <div className="space-y-2">
-                  <label
-                    htmlFor="email"
-                    className="text-lg font-bold text-[#0D530E]"
-                  >
-                    Email <span className="text-red-500">*</span>
-                  </label>
-                  <input
-                    id="email"
-                    type="email"
-                    name="email"
-                    value={form.email}
-                    onChange={handleChange}
-                    className="focus:border-primary w-full rounded-xl border-2 border-[#0D530E] bg-white px-4 py-3 text-base text-[#0D530E] transition-all outline-none"
-                  />
-                  <p className="text-xs text-[#0D530E]/60">
-                    Your receipt and order updates will be sent here.
-                  </p>
-                </div>
+              <div className="space-y-2">
+                <label
+                  htmlFor="email"
+                  className="text-lg font-bold text-[#0D530E]"
+                >
+                  Email <span className="text-red-500">*</span>
+                </label>
+                <input
+                  id="email"
+                  type="email"
+                  name="email"
+                  value={form.email}
+                  onChange={handleChange}
+                  className="w-full rounded-xl border border-neutral-200 bg-white px-4 py-3 text-base text-[#0D530E] transition-all outline-none focus:border-neutral-300"
+                />
+                <p className="text-md text-[#0D530E]/60">
+                  Your receipt and order updates will be sent here.
+                </p>
               </div>
 
               {/* Address */}
@@ -291,7 +289,7 @@ export default function CartPage() {
                   name="address"
                   value={form.address}
                   onChange={handleChange}
-                  className="focus:border-primary w-full rounded-xl border-2 border-[#0D530E] bg-white px-4 py-3 text-base text-[#0D530E] transition-all outline-none"
+                  className="w-full rounded-xl border border-neutral-200 bg-white px-4 py-3 text-base text-[#0D530E] transition-all outline-none focus:border-neutral-300"
                 />
               </div>
 
@@ -309,7 +307,7 @@ export default function CartPage() {
                   name="pincode"
                   value={form.pincode}
                   onChange={handleChange}
-                  className="focus:border-primary w-full rounded-xl border-2 border-[#0D530E] bg-white px-4 py-3 text-base text-[#0D530E] transition-all outline-none"
+                  className="w-full rounded-xl border border-neutral-200 bg-white px-4 py-3 text-base text-[#0D530E] transition-all outline-none focus:border-neutral-300"
                 />
               </div>
 
@@ -357,7 +355,7 @@ export default function CartPage() {
                   value={form.notes}
                   onChange={handleChange}
                   placeholder="Any special instructions? (Optional)"
-                  className="focus:border-primary w-full resize-none rounded-xl border-2 border-[#0D530E] bg-white px-4 py-3 text-base text-[#0D530E] transition-all outline-none"
+                  className="w-full resize-none rounded-xl border border-neutral-200 bg-white px-4 py-3 text-base text-[#0D530E] transition-all outline-none focus:border-neutral-300"
                 />
               </div>
 
@@ -368,7 +366,7 @@ export default function CartPage() {
               <button
                 type="submit"
                 disabled={submitting}
-                className="bg-primary w-full rounded-xl border-2 border-[#0D530E] px-8 py-4 text-xl font-bold text-white shadow-[4px_4px_0px_#0D530E] transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none disabled:opacity-50"
+                className="w-full rounded-xl border-2 border-[#0D530E] bg-[#0D530E]/80 px-8 py-4 text-xl font-bold text-white shadow-[4px_4px_0px_#0D530E] transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none disabled:opacity-50"
               >
                 {submitting ? "Placing Order..." : "Place Order"}
               </button>

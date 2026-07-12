@@ -5,7 +5,7 @@ import { features } from "@/lib/webdata/features";
 
 export function WhyChooseUs() {
   return (
-    <section className="py-24 md:py-32 bg-white">
+    <section className="bg-white py-12 md:py-24">
       <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
         <SectionHeading
           title="Why Choose Us"

@@ -22,10 +22,10 @@ export function FeatureCard({ feature, index }: FeatureCardProps) {
 
   return (
     <div
-      className={`group ${tilt} rounded-[28px] border-2 border-[#0D530E] bg-[#FBF5DD] p-6 transition-all duration-300 hover:-translate-y-2 hover:rotate-0 `}
+      className={`rounded-xl border border-neutral-200 bg-[#FBF5DD] p-4 transition-all duration-300 hover:-translate-y-2 hover:rotate-0 `}
     >
-      <div className="mb-6 flex h-20 w-20 items-center justify-center rounded-2xl border-2 border-[#0D530E] bg-[#E7E1B1] shadow-[2px_2px_0px_#0D530E] transition-all duration-300 group-hover:scale-110">
-        <Icon className="h-10 w-10 text-[#0D530E]" strokeWidth={2.5} />
+      <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-2xl border-2 border-[#0D530E] bg-[#E7E1B1] shadow-[2px_2px_0px_#0D530E] transition-all duration-300 group-hover:scale-110">
+        <Icon className="h-6 w-6 text-[#0D530E]" strokeWidth={2.5} />
       </div>
 
       <h3 className="mb-4 text-3xl font-black text-[#0D530E]">{feature.title}</h3>

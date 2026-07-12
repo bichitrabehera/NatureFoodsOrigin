@@ -15,7 +15,7 @@ export function SectionHeading({
   centered = true,
 }: SectionHeadingProps) {
   return (
-    <div className={`mb-14 ${centered ? "text-center" : ""}`}>
+    <div className={`mb-6 ${centered ? "text-center" : ""}`}>
       <h2
         className="text-primary inline-block pb-4 text-5xl font-bold md:text-6xl"
         style={{

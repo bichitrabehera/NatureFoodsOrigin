@@ -26,9 +26,9 @@ export default function AdminLoginPage() {
   };
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background px-6">
-      <div className="w-full max-w-sm rounded-2xl border-2 border-text bg-[#FBF5DD] p-8">
-        <h1 className="mb-6 text-center text-3xl font-black text-text">
+    <div className="bg-background flex min-h-screen items-center justify-center px-6">
+      <div className="w-full max-w-sm rounded-2xl border border-neutral-200 bg-[#FBF5DD] p-8">
+        <h1 className="text-text mb-6 text-center text-2xl font-black">
           Admin Login
         </h1>
 
@@ -38,7 +38,7 @@ export default function AdminLoginPage() {
             placeholder="Enter admin password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            className="w-full rounded-xl border-2 border-text bg-white px-4 py-3 text-base text-text placeholder-text/50 outline-none transition-all focus:border-primary"
+            className="text-text placeholder-text/50 focus:border-primary w-full rounded-xl border border-neutral-200 bg-white px-4 py-3 text-base transition-all outline-none"
             autoFocus
           />
 
@@ -50,7 +50,7 @@ export default function AdminLoginPage() {
 
           <button
             type="submit"
-            className="w-full rounded-xl bg-primary py-3 text-lg font-bold text-white transition-all hover:bg-primary/90"
+            className="bg-primary hover:bg-primary/90 w-full rounded-xl py-3 text-lg font-bold text-white transition-all"
           >
             Login
           </button>
