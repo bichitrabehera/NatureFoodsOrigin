@@ -1,6 +1,11 @@
-import React from "react";
+"use client";
 
-interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+import React from "react";
+import { motion } from "motion/react";
+
+interface ButtonProps extends React.ComponentPropsWithoutRef<
+  typeof motion.button
+> {
   variant?: "primary" | "secondary" | "ghost";
   size?: "sm" | "md" | "lg";
   children: React.ReactNode;
@@ -14,28 +19,31 @@ export function Button({
   ...props
 }: ButtonProps) {
   const base =
-    "inline-flex items-center justify-center text font-bold rounded-full transition-all duration-300 cursor-pointer";
+    "inline-flex cursor-pointer items-center justify-center rounded-2xl font-bold transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ember";
 
   const variants = {
     primary:
-      "bg-[#ffffff] text-[#0D530E] hover:bg-black/80 hover:text-white active:scale-95",
+      "border-1 border-ink bg-ember text-ink hover:bg-ink hover:text-white",
     secondary:
-      "border-2 border-primary text-primary hover:bg-primary hover:text-background",
-    ghost: "text-primary hover:bg-accent/40",
+      "border-1 border-ink bg-transparent text-ink hover:bg-ink hover:text-white",
+    ghost: "text-ink hover:bg-ink/5",
   };
 
   const sizes = {
-    sm: " px-3 py-2",
-    md: " px-3 py-2",
-    lg: " px-3 py-2",
+    sm: "px-3 py-2",
+    md: "px-4 py-2",
+    lg: "px-6 py-3",
   };
 
   return (
-    <button
+    <motion.button
       className={`${base} ${variants[variant]} ${sizes[size]} ${className}`}
+      whileHover={{ scale: 1.02 }}
+      whileTap={{ scale: 0.97 }}
+      transition={{ type: "spring", stiffness: 400, damping: 20 }}
       {...props}
     >
       {children}
-    </button>
+    </motion.button>
   );
 }

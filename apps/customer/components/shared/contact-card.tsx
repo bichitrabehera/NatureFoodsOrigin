@@ -9,16 +9,16 @@ interface ContactCardProps {
 
 export function ContactCard({ icon: Icon, label, value }: ContactCardProps) {
   return (
-    <div className="group rounded-xl border border-neutral-200 bg-[#FBF5DD] p-6 transition-all duration-300">
-      <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-2xl border border-neutral-200 bg-[#E7E1B1]">
-        <Icon className="h-7 w-7 text-[#0D530E]" />
+    <div className="rounded-2xl border border-line bg-surface p-6">
+      <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-leaf/15">
+        <Icon className="h-7 w-7 text-leaf" />
       </div>
-      <p className="mb-1 text-sm font-semibold tracking-wide text-[#0D530E] uppercase">
+      <p className="mb-1 text-sm font-semibold tracking-wide text-ink/60 uppercase">
         {label}
       </p>
-      <p className="overflow-hidden text-lg leading-relaxed font-bold break-words text-[#0D530E]">
+      <p className="text-lg leading-relaxed font-bold text-ink whitespace-pre-line break-words">
         {value}
-      </p>{" "}
+      </p>
     </div>
   );
 }

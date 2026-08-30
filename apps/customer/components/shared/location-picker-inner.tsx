@@ -10,7 +10,7 @@ function getIcon() {
   return new L.DivIcon({
     html: `
       <svg viewBox="0 0 24 24" width="32" height="32" fill="none" xmlns="http://www.w3.org/2000/svg" style="filter:drop-shadow(0 1px 3px rgba(0,0,0,0.4))">
-        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" fill="#16a34a"/>
+        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" fill="#0fa958"/>
         <circle cx="12" cy="9" r="3" fill="white"/>
       </svg>`,
     iconSize: [32, 32],
@@ -122,7 +122,7 @@ export default function LocationPickerInner({
         type="button"
         onClick={detectLocation}
         disabled={detecting}
-        className="mb-2 flex items-center gap-2 rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm font-medium text-gray-700 transition hover:bg-gray-50 disabled:opacity-50"
+        className="mb-2 flex items-center gap-2 rounded-lg border-2 border-ink bg-surface px-3 py-2 text-sm font-medium text-ink transition-colors hover:bg-ink hover:text-white disabled:opacity-50"
       >
         <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
           <circle cx="12" cy="12" r="3" />
@@ -132,9 +132,9 @@ export default function LocationPickerInner({
       </button>
       <div
         ref={containerRef}
-        className="h-64 w-full rounded-xl border border-gray-300"
+        className="h-64 w-full rounded-xl border border-line"
       />
-      <p className="mt-1 text-xs text-gray-500">
+      <p className="mt-1 text-xs text-ink/60">
         Click the map to pin your delivery location * — drag to adjust
       </p>
     </div>

@@ -1,45 +1,58 @@
 import React from "react";
-import { Button } from "@/components/ui/button";
 import { SectionHeading } from "@/components/sections/section-heading";
 
 export function About() {
   return (
-    <div className="mx-auto space-y-8 bg-white *:px-6 sm:px-8 lg:px-10">
-      <div className="mx-auto max-w-7xl space-y-8 py-12 md:py-24">
-        <h3 className="text-4xl font-extrabold text-[#0D530E] lg:text-6xl">
-          Every Great <span className="text-primary underline">Meal</span>{" "}
-          Begins With a Story.
-        </h3>
+    <section className="bg-bg font-display">
+      <div className="mx-auto max-w-7xl px-6 py-16 sm:px-8 md:py-24 lg:px-10">
+        {/* Intro */}
+        <div className="max-w-4xl">
+          <span className="text-sm font-semibold uppercase tracking-widest text-ink/50">
+            Our Story
+          </span>
 
-        <p className="text-primary/80 text-2xl leading-relaxed">
-          Nature Food Origin began in the heart of <strong>Tirupati</strong>,
-          where every meal was prepared with one simple promise—to serve fresh,
-          honest food that people could trust. What started as a small kitchen
-          serving families, students, and workers quickly became a place where
-          customers returned not just for the taste, but for the care in every
-          meal.
-        </p>
+          <h2 className="mt-5 max-w-3xl font-display text-4xl font-black leading-[1.05] tracking-tight text-ink sm:text-5xl md:text-6xl">
+            Every great meal begins with a story.
+          </h2>
+        </div>
 
-        <p className="text-primary/80 text-2xl leading-relaxed">
-          As our community grew, so did our dream. To serve more people without
-          compromising quality, we built a modern <strong>cloud kitchen</strong>
-          , combining traditional recipes with efficient preparation and fast
-          delivery. Every ingredient is carefully sourced, every dish is freshly
-          prepared, and every order is made with the same dedication that
-          inspired our very first customer.
-        </p>
+        {/* Story */}
+        <div className="mt-16 grid gap-10  pt-10 md:grid-cols-[0.8fr_1.2fr] md:gap-20">
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-widest text-ink/40">
+              Where it began
+            </p>
+          </div>
 
-        <div className="border-primary/30 bg-primary/20 rounded-2xl border p-6">
-          <h4 className="text-primary mb-4 text-3xl font-bold">Our Mission</h4>
+          <div className="space-y-7">
+            <p className="text-xl leading-relaxed text-ink/75 md:text-2xl">
+              Nature Food Origin began in the heart of{" "}
+              <strong className="font-semibold text-ink">Bengaluru</strong>,
+              where every meal was prepared with one simple promise—to serve
+              fresh, honest food that people could trust.
+            </p>
 
-          <p className="text-primary/80 text-2xl leading-relaxed">
-            We believe healthy food should never feel like a compromise. Our
-            mission is to make wholesome, delicious meals accessible to everyone
-            while supporting local farmers, reducing food waste, and creating
-            experiences that bring people together around good food.
-          </p>
+            <p className="text-xl leading-relaxed text-ink/75 md:text-2xl">
+              What started as a small kitchen serving families, students, and
+              workers quickly became a place where customers returned not just
+              for the taste, but for the{" "}
+              <strong className="font-semibold text-ink">
+                care in every meal.
+              </strong>
+            </p>
+
+            <p className="text-xl leading-relaxed text-ink/75 md:text-2xl">
+              As our community grew, so did our dream. To serve more people
+              without compromising quality, we built a modern{" "}
+              <strong className="font-semibold text-ink">
+                cloud kitchen
+              </strong>
+              , combining traditional recipes with efficient preparation and
+              fast delivery.
+            </p>
+          </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }

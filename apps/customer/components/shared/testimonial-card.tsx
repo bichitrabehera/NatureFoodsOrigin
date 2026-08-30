@@ -1,5 +1,6 @@
 import React from "react";
-import { Quote } from "lucide-react";
+import Image from "next/image";
+import { Star } from "lucide-react";
 import { Testimonial } from "@/lib/types";
 
 interface TestimonialCardProps {
@@ -8,19 +9,63 @@ interface TestimonialCardProps {
 
 export function TestimonialCard({ testimonial }: TestimonialCardProps) {
   return (
-    <div className="group h-full w-full rounded-[28px] border border-neutral-200 bg-[#FBF5DD] p-4 transition-all duration-300">
-      <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-2xl border-2 border-[#0D530E] bg-[#E7E1B1] shadow-[4px_4px_0px_#0D530E]">
-        <Quote className="h-7 w-7 text-[#0D530E]" />
+    <div
+      className="
+        group flex h-full w-full flex-col
+        rounded-xl
+        bg-surface
+        p-6
+        ring-1 ring-black/10
+        shadow-sm shadow-black/5
+        transition-all duration-300
+        hover:-translate-y-0.5
+        hover:shadow-md hover:shadow-black/10
+      "
+    >
+      {/* Rating */}
+      <div className="flex items-center gap-0.5">
+        {Array.from({ length: testimonial.rating }).map((_, i) => (
+          <Star
+            key={i}
+            className="h-4 w-4 fill-sun text-sun"
+          />
+        ))}
       </div>
 
-      <p className="mb-8 text-xl leading-relaxed text-[#000000]">
-        "{testimonial.review}"
-      </p>
+      {/* Review */}
+      <div className="flex-1 py-8">
+        <span className="font-display text-5xl leading-none text-ink/15">
+          “
+        </span>
 
-      <div className="flex items-center gap-4 border-[#000000] pt-4">
-        <h4 className="text-xl font-black text-[#000000]">
-          by {testimonial.name}
-        </h4>
+        <p className="mt-2 text-lg leading-8 text-ink/75">
+          {testimonial.review}
+        </p>
+      </div>
+
+      {/* Customer */}
+      <div className="flex items-center gap-3 border-t border-line pt-5">
+        <Image
+          src={testimonial.avatar}
+          alt={testimonial.name}
+          width={44}
+          height={44}
+          className="
+            h-11 w-11 rounded-lg
+            object-cover
+            ring-1 ring-black/10
+          "
+        />
+
+        <div>
+          <h4 className="text-sm font-semibold text-ink">
+            {testimonial.name}
+          </h4>
+
+          <p className="mt-0.5 text-xs text-ink/50">
+            Verified customer
+          </p>
+        </div>
       </div>
     </div>
   );
