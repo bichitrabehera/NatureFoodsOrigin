@@ -26,11 +26,7 @@ export default function OrderNowPage() {
       <div className="mx-auto max-w-7xl px-6 py-16 sm:px-8 md:py-24 lg:px-10">
         {/* Header */}
         <div className="border-b border-line pb-10">
-          <span className="text-sm font-semibold uppercase tracking-widest text-ink/40">
-            Fresh from our kitchen
-          </span>
-
-          <div className="mt-4 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+          <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
             <h1 className="font-display text-4xl font-black leading-[1.05] tracking-tight text-ink sm:text-5xl md:text-6xl">
               Choose your
               <br />
@@ -45,7 +41,7 @@ export default function OrderNowPage() {
         </div>
 
         {/* Categories */}
-        <div className="mt-8 flex items-center gap-2 overflow-x-auto pb-2 scrollbar-hide">
+        <div className="mt-8 flex items-center gap-2 overflow-x-auto pb-2 scrollbar-thin">
           {categories.map((category) => {
             const active = activeCategory === category;
 
@@ -58,10 +54,10 @@ export default function OrderNowPage() {
                 className={`
                   shrink-0 rounded-lg px-4 py-2
                   text-sm font-semibold capitalize
-                  transition-all duration-200
+                  transition-colors duration-200
                   ${active
-                    ? "bg-ink text-white shadow-sm"
-                    : "bg-surface text-ink/60 ring-1 ring-black/10 hover:text-ink"
+                    ? "bg-ink text-white"
+                    : "bg-surface text-ink/60 ring-1 ring-line hover:text-ink"
                   }
                 `}
               >
@@ -80,27 +76,23 @@ export default function OrderNowPage() {
               <article
                 key={product.id}
                 className="
-                  group overflow-hidden
-                  rounded-xl
+                  overflow-hidden
+                  rounded-2xl
                   bg-surface
-                  ring-1 ring-black/10
-                  shadow-sm shadow-black/5
-                  transition-all duration-300
-                  hover:-translate-y-0.5
-                  hover:shadow-md hover:shadow-black/10
+                  border-neutral-200
+                  shadow-sm
+                  transition-colors
+                  hover:ring-leaf
                 "
               >
                 {/* Image */}
-                <div className="relative aspect-[4/3] m-3 rounded-lg overflow-hidden bg-neutral-100">
+                <div className="relative aspect-[5/4] m-3 rounded-xl overflow-hidden bg-mist">
                   <Image
                     src={product.image}
                     alt={product.name}
                     fill
                     sizes="(max-width: 768px) 100vw, 400px"
-                    className="
-                      object-cover
-                      transition-transform duration-500
-                    "
+                    className="object-cover"
                   />
 
                   {/* Cart Quantity */}
@@ -109,12 +101,11 @@ export default function OrderNowPage() {
                       className="
                         absolute right-4 top-4
                         rounded-lg
-                        bg-white
+                        bg-surface
                         px-3 py-2
                         text-xs font-semibold
                         text-ink
-                        shadow-sm shadow-black/10
-                        ring-1 ring-black/10
+                        ring-1 ring-line
                       "
                     >
                       {qty} in cart
@@ -129,7 +120,7 @@ export default function OrderNowPage() {
                       {product.name}
                     </h2>
 
-                    <span className="shrink-0 text-sm font-semibold text-ink">
+                    <span className="shrink-0 text-sm font-semibold text-ink tabular-nums">
                       {formatINR(product.price)}
                     </span>
                   </div>
@@ -143,16 +134,13 @@ export default function OrderNowPage() {
                     onClick={() => addItem(product)}
                     className="
                       mt-6 flex w-full items-center justify-center gap-2
-                      rounded-lg
+                      rounded-xl
                       bg-ink
                       px-4 py-3
                       text-sm font-semibold
                       text-white
-                      transition-all duration-200
-                      hover:-translate-y-0.5
-                      hover:shadow-md
-                      active:translate-y-0
-                      active:scale-[0.98]
+                      transition-colors
+                      hover:bg-pine
                     "
                   >
                     <ShoppingCart className="h-4 w-4" />
@@ -167,7 +155,7 @@ export default function OrderNowPage() {
 
         {/* Empty state */}
         {filtered.length === 0 && (
-          <div className="mt-10 rounded-xl bg-surface p-12 text-center ring-1 ring-black/10">
+          <div className="mt-10 rounded-xl bg-surface p-12 text-center ring-1 ring-line">
             <p className="text-lg font-semibold text-ink">
               No dishes found.
             </p>

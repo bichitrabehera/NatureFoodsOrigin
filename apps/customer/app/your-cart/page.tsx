@@ -100,15 +100,11 @@ export default function CartPage() {
     return (
       <section className="min-h-screen bg-bg">
         <div className="mx-auto flex min-h-screen max-w-3xl flex-col items-center justify-center px-6 text-center">
-          <div className="flex h-16 w-16 items-center justify-center rounded-xl bg-surface ring-1 ring-black/10">
+          <div className="flex h-16 w-16 items-center justify-center rounded-xl bg-surface ring-1 ring-line">
             <ShoppingBag className="h-7 w-7 text-ink/40" />
           </div>
 
-          <span className="mt-6 text-sm font-semibold uppercase tracking-widest text-ink/40">
-            Your basket
-          </span>
-
-          <h1 className="mt-4 font-display text-4xl font-black tracking-tight text-ink sm:text-5xl">
+          <h1 className="mt-6 font-display text-4xl font-black tracking-tight text-ink sm:text-5xl">
             Your cart is empty.
           </h1>
 
@@ -126,10 +122,9 @@ export default function CartPage() {
               px-6 py-3
               text-sm font-semibold
               text-white
-              transition-all
-              hover:-translate-y-0.5
-              hover:shadow-md
-              active:scale-[0.98]
+              transition-colors
+              hover:bg-pine
+              focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ember
             "
           >
             <ArrowLeft className="h-4 w-4" />
@@ -145,11 +140,7 @@ export default function CartPage() {
       <div className="mx-auto max-w-7xl px-6 py-16 sm:px-8 md:py-24 lg:px-10">
         {/* Header */}
         <div className="border-b border-line pb-10">
-          <span className="text-sm font-semibold uppercase tracking-widest text-ink/40">
-            Checkout
-          </span>
-
-          <h1 className="mt-4 font-display text-4xl font-black tracking-tight text-ink sm:text-5xl md:text-6xl">
+          <h1 className="font-display text-4xl font-black tracking-tight text-ink sm:text-5xl md:text-6xl">
             Your order.
           </h1>
 
@@ -178,8 +169,7 @@ export default function CartPage() {
                     overflow-hidden
                     rounded-xl
                     bg-surface
-                    ring-1 ring-black/10
-                    shadow-sm shadow-black/5
+                    ring-1 ring-line
                   "
                 >
                   <div className="flex gap-4 p-4">
@@ -193,7 +183,7 @@ export default function CartPage() {
                         h-24 w-24 shrink-0
                         rounded-lg
                         object-cover
-                        ring-1 ring-black/5
+                        ring-1 ring-line
                       "
                     />
 
@@ -203,11 +193,11 @@ export default function CartPage() {
                         {item.product.name}
                       </h3>
 
-                      <p className="mt-1 text-sm text-ink/50">
+                      <p className="mt-1 text-sm text-ink/50 tabular-nums">
                         {formatINR(item.product.price)} each
                       </p>
 
-                      <p className="mt-3 text-base font-bold text-ink">
+                      <p className="mt-3 text-base font-bold text-ink tabular-nums">
                         {formatINR(item.product.price * item.quantity)}
                       </p>
                     </div>
@@ -232,6 +222,7 @@ export default function CartPage() {
                           transition-colors
                           hover:bg-surface
                           hover:text-ink
+                          focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ember
                         "
                       >
                         <Minus className="h-4 w-4" />
@@ -257,6 +248,7 @@ export default function CartPage() {
                           transition-colors
                           hover:bg-surface
                           hover:text-ink
+                          focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ember
                         "
                       >
                         <Plus className="h-4 w-4" />
@@ -274,6 +266,7 @@ export default function CartPage() {
                         transition-colors
                         hover:bg-danger/10
                         hover:text-danger
+                        focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ember
                       "
                     >
                       <Trash2 className="h-4 w-4" />
@@ -293,8 +286,7 @@ export default function CartPage() {
                 rounded-xl
                 bg-surface
                 p-6
-                ring-1 ring-black/10
-                shadow-sm shadow-black/5
+                ring-1 ring-line
               "
             >
               <h2 className="font-display text-2xl font-bold text-ink">
@@ -312,7 +304,7 @@ export default function CartPage() {
                       {item.product.name} × {item.quantity}
                     </span>
 
-                    <span className="shrink-0 font-semibold text-ink">
+                    <span className="shrink-0 font-semibold text-ink tabular-nums">
                       {formatINR(item.product.price * item.quantity)}
                     </span>
                   </div>
@@ -323,14 +315,14 @@ export default function CartPage() {
               <div className="mt-6 space-y-3 border-t border-line pt-5">
                 <div className="flex justify-between text-sm">
                   <span className="text-ink/60">Subtotal</span>
-                  <span className="font-semibold text-ink">
+                  <span className="font-semibold text-ink tabular-nums">
                     {formatINR(subtotal)}
                   </span>
                 </div>
 
                 <div className="flex justify-between text-sm">
                   <span className="text-ink/60">GST (5%)</span>
-                  <span className="font-semibold text-ink">
+                  <span className="font-semibold text-ink tabular-nums">
                     {formatINR(gstAmount)}
                   </span>
                 </div>
@@ -338,7 +330,7 @@ export default function CartPage() {
                 <div className="flex justify-between border-t border-line pt-3">
                   <span className="font-bold text-ink">Total</span>
 
-                  <span className="font-display text-xl font-black text-ink">
+                  <span className="font-display text-xl font-black text-ink tabular-nums">
                     {formatINR(totalWithGst)}
                   </span>
                 </div>
@@ -371,13 +363,13 @@ export default function CartPage() {
                     })}
                     className="
                       w-full rounded-lg
-                      bg-white
+                      bg-surface
                       px-4 py-3
                       text-sm text-ink
-                      ring-1 ring-black/10
+                      ring-1 ring-line
                       outline-none
                       placeholder:text-ink/30
-                      transition-all
+                      transition-colors
                       focus:ring-2 focus:ring-leaf
                     "
                   />
@@ -412,13 +404,13 @@ export default function CartPage() {
                     })}
                     className="
                       w-full rounded-lg
-                      bg-white
+                      bg-surface
                       px-4 py-3
                       text-sm text-ink
-                      ring-1 ring-black/10
+                      ring-1 ring-line
                       outline-none
                       placeholder:text-ink/30
-                      transition-all
+                      transition-colors
                       focus:ring-2 focus:ring-leaf
                     "
                   />
@@ -452,13 +444,13 @@ export default function CartPage() {
                     })}
                     className="
                       w-full rounded-lg
-                      bg-white
+                      bg-surface
                       px-4 py-3
                       text-sm text-ink
-                      ring-1 ring-black/10
+                      ring-1 ring-line
                       outline-none
                       placeholder:text-ink/30
-                      transition-all
+                      transition-colors
                       focus:ring-2 focus:ring-leaf
                     "
                   />
@@ -492,13 +484,13 @@ export default function CartPage() {
                     })}
                     className="
                       w-full resize-none rounded-lg
-                      bg-white
+                      bg-surface
                       px-4 py-3
                       text-sm text-ink
-                      ring-1 ring-black/10
+                      ring-1 ring-line
                       outline-none
                       placeholder:text-ink/30
-                      transition-all
+                      transition-colors
                       focus:ring-2 focus:ring-leaf
                     "
                   />
@@ -534,13 +526,13 @@ export default function CartPage() {
                     })}
                     className="
                       w-full rounded-lg
-                      bg-white
+                      bg-surface
                       px-4 py-3
                       text-sm text-ink
-                      ring-1 ring-black/10
+                      ring-1 ring-line
                       outline-none
                       placeholder:text-ink/30
-                      transition-all
+                      transition-colors
                       focus:ring-2 focus:ring-leaf
                     "
                   />
@@ -616,13 +608,13 @@ export default function CartPage() {
                     {...register("notes")}
                     className="
                       w-full resize-none rounded-lg
-                      bg-white
+                      bg-surface
                       px-4 py-3
                       text-sm text-ink
-                      ring-1 ring-black/10
+                      ring-1 ring-line
                       outline-none
                       placeholder:text-ink/30
-                      transition-all
+                      transition-colors
                       focus:ring-2 focus:ring-leaf
                     "
                   />
@@ -638,11 +630,10 @@ export default function CartPage() {
                     px-6 py-3.5
                     text-sm font-semibold
                     text-white
-                    transition-all duration-200
-                    hover:-translate-y-0.5
-                    hover:shadow-md
-                    active:translate-y-0
-                    active:scale-[0.98]
+                    transition-colors duration-200
+                    hover:bg-pine
+                    active:translate-y-px
+                    focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ember
                   "
                 >
                   Continue to Payment

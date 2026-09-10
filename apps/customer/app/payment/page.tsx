@@ -150,7 +150,7 @@ export default function PaymentPage() {
                   <span className="text-ink/70">
                     {item.productName} x{item.quantity}
                   </span>
-                  <span className="font-bold text-ink">
+                  <span className="font-bold text-ink tabular-nums">
                     {formatINR(item.unitPrice * item.quantity)}
                   </span>
                 </div>
@@ -160,19 +160,19 @@ export default function PaymentPage() {
             <div className="mt-4 space-y-1 border-t-2 border-line pt-4">
               <div className="flex justify-between text-xl">
                 <span className="text-ink/70">Subtotal</span>
-                <span className="font-bold text-ink">
+                <span className="font-bold text-ink tabular-nums">
                   {formatINR(order.subtotal)}
                 </span>
               </div>
               <div className="flex justify-between text-xl">
                 <span className="text-ink/70">GST (5%)</span>
-                <span className="font-bold text-ink">
+                <span className="font-bold text-ink tabular-nums">
                   {formatINR(order.gstAmount)}
                 </span>
               </div>
               <div className="flex justify-between border-t border-line pt-2 text-xl">
                 <span className="font-black text-ink">Total</span>
-                <span className="font-black text-ink">
+                <span className="font-black text-ink tabular-nums">
                   {formatINR(order.total)}
                 </span>
               </div>

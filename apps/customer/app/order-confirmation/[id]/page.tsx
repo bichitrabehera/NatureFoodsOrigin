@@ -38,7 +38,7 @@ export default async function OrderConfirmationPage({
           {order ? (
             <div className="mb-4 text-center">
               <p className="text-lg text-ink/70">Total Paid</p>
-              <p className="font-display text-3xl font-black text-leaf">
+              <p className="font-display text-3xl font-black text-leaf tabular-nums">
                 {formatINR(Number(order.totalAmount))}
               </p>
             </div>

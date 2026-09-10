@@ -11,25 +11,35 @@ const iconMap: Record<string, React.ElementType> = {
 
 interface FeatureCardProps {
   feature: Feature;
-  index: number;
+  emphasis?: boolean;
 }
 
-export function FeatureCard({ feature }: FeatureCardProps) {
+export function FeatureCard({ feature, emphasis = false }: FeatureCardProps) {
   const Icon = iconMap[feature.icon] || Leaf;
 
+  const titleWords = feature.title.split(" ");
+  const accentWord = titleWords[0];
+  const restWords = titleWords.slice(1).join(" ");
+
   return (
-    <div className="  bg-surface p-6 transition-colors">
-      <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-2xl bg-leaf/15">
-        <Icon className="h-6 w-6 text-leaf" strokeWidth={2.5} />
+    <div
+      className={`h-full rounded-2xl bg-surface ring-1 ring-line transition-colors hover:ring-leaf ${
+        emphasis ? "p-8 md:p-10" : "p-6 md:p-7"
+      }`}
+    >
+      <div className="flex items-center gap-3">
+        <Icon className="h-5 w-5 text-leaf" strokeWidth={2.5} />
+        <h3
+          className={`font-display font-black text-ink ${
+            emphasis ? "text-3xl md:text-4xl" : "text-xl"
+          }`}
+        >
+          <span className="text-ember">{accentWord}</span>
+          {restWords ? ` ${restWords}` : ""}
+        </h3>
       </div>
 
-      <h3 className="font-display mb-4 text-2xl font-black text-ink">
-        {feature.title}
-      </h3>
-
-      <p className="text-lg leading-relaxed text-ink/70">
-        {feature.description}
-      </p>
+      <p className="mt-3 text-ink/70 leading-relaxed">{feature.description}</p>
     </div>
   );
 }

@@ -1,3 +1,5 @@
+/* Hallmark · macrostructure: Split Studio · theme: Garden (editorial) · nav: N6 Masthead · footer: Ft1 Mast-headed */
+
 @import "tailwindcss";
 
 @theme inline {
@@ -9,6 +11,8 @@
   --color-sun: #ffc24b;
   --color-line: rgb(11 11 11 / 0.1);
   --color-danger: #d63b2f;
+  --color-pine: oklch(0.42 0.11 155);
+  --color-mist: oklch(0.965 0.02 120);
 
   --font-sans: var(--font-plus-jakarta), ui-sans-serif, system-ui, sans-serif;
   --font-display: var(--font-bricolage), ui-sans-serif, system-ui, sans-serif;
@@ -21,8 +25,28 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+html,
+body {
+  overflow-x: clip;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-pine) transparent;
+}
+
 ::-webkit-scrollbar {
-  display: none;
+  height: 8px;
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: color-mix(in oklab, var(--color-pine) 55%, transparent);
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
 }
 
 @media (prefers-reduced-motion: reduce) {
