@@ -17,7 +17,7 @@ export function ProductCard({ product }: ProductCardProps) {
   const router = useRouter();
 
   return (
-    <div className="overflow-hidden rounded-2xl bg-surface ring-1 ring-line transition-colors hover:ring-leaf">
+    <div className="overflow-hidden rounded-2xl bg-surface ring-1 ring-line transition-colors hover:ring-neutral-300">
       <div className="relative aspect-5/4 m-3 rounded-xl overflow-hidden bg-mist">
         <Image
           src={product.image}

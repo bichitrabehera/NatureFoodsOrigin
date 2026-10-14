@@ -9,7 +9,7 @@ import { Button } from "@/components/ui/button";
 
 export function Hero() {
   return (
-    <section className="overflow-hidden bg-pine text-white pt-16 pb-20 md:pt-24 md:pb-28">
+    <section className="overflow-hidden bg-green-800 text-white pt-16 pb-20 md:pt-24 md:pb-28">
       <motion.div
         className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10 grid items-center gap-12 lg:grid-cols-[7fr_5fr] lg:gap-16"
         initial={{ opacity: 0, y: 24 }}
@@ -39,7 +39,7 @@ export function Hero() {
           </div>
         </div>
 
-        <div className="lg:pl-12 lg:border-l lg:border-white/15">
+        <div className="lg:pl-12">
           <Image
             src="/images/hero.png"
             alt="Fresh, wholesome meal from Nature Food Origin"

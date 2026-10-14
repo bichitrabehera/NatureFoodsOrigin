@@ -37,7 +37,7 @@ export function Testimonials() {
                 ))}
               </div>
 
-              <p className="mt-3 font-display text-2xl font-bold leading-snug text-ink md:text-3xl">
+              <p className="mt-3 font-display text-xl font-bold leading-snug text-ink md:text-3xl">
                 {testimonial.review}
               </p>
 

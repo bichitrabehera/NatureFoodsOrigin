@@ -5,6 +5,7 @@ import { Menu, X, ShoppingCart } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { useCart } from "@/lib/context/cart-context";
+import Image from "next/image";
 
 const navLinks = [
   { label: "Home", href: "/" },
@@ -36,7 +37,7 @@ export function Navbar() {
   const closeMobile = () => setMobileOpen(false);
 
   return (
-    <nav className="bg-pine font-display">
+    <nav className="bg-green-800 font-display">
       <div className="mx-auto max-w-7xl px-6 py-3 sm:px-8 lg:px-10">
 
 
@@ -45,9 +46,13 @@ export function Navbar() {
             href="/"
             className="focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ember"
           >
-            <span className="text-2xl font-bold text-white">
-              Nature Food Origin
-            </span>
+            <Image 
+            src="/images/logo.png"
+            alt="Logo"
+            width={100}
+            height={50}
+            className="h-auto w-auto"
+            />
           </Link>
 
           <div className="hidden items-center gap-8 md:flex">
@@ -120,7 +125,7 @@ export function Navbar() {
       {mobileOpen && (
         <div
           id="mobile-nav"
-          className="border-t border-white/15 bg-pine md:hidden"
+          className="border-t border-white/15 bg-green-800 md:hidden"
         >
           <div className="mx-auto max-w-7xl px-6 py-6 sm:px-8 lg:px-10">
             <nav className="flex flex-col">
